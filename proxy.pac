@@ -21,7 +21,7 @@ function FindProxyForURL(url, host) {
     }
 
     // Autoriser Roundcube (OVH)
-    if (dnsDomainIs(host, "mail.ovh.net") || shExpMatch(url, "*mail.ovh.net/roundcube*")) {
+    if (dnsDomainIs(host, "mail.ovh.net") || shExpMatch(url, "*mail.ovh.net*")) {
         return "DIRECT";
     }
 
