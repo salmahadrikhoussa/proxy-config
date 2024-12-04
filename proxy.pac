@@ -5,7 +5,7 @@ function FindProxyForURL(url, host) {
     }
 
     // Autoriser HubSpot
-    if (dnsDomainIs(host, "app.hubspot.com") || shExpMatch(url, "*app.hubspot.com*")) {
+    if (dnsDomainIs(host, "hubspot.com") || shExpMatch(url, "*hubspot.com*")) {
         return "DIRECT";
     }
      // Autoriser HubSpot
