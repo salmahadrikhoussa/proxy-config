@@ -6,13 +6,33 @@ function FindProxyForURL(url, host) {
     }
 
     // Autoriser HubSpot
-    if (dnsDomainIs(host, "hubspot.com") || shExpMatch(url, "*hubspot.com*")) {
+    if (dnsDomainIs(host, "hubspot.fr") || shExpMatch(url, "*hubspot.fr*")) {
         return "DIRECT";
     }
 
     // Autoriser Google Workspace
     if (dnsDomainIs(host, "google.com") || dnsDomainIs(host, "googleapis.com") || 
         shExpMatch(url, "*google.com*") || shExpMatch(url, "*googleapis.com*")) {
+        return "DIRECT";
+    }
+
+    // Autoriser GitHub
+    if (dnsDomainIs(host, "github.com") || shExpMatch(url, "*github.com*")) {
+        return "DIRECT";
+    }
+
+    // Autoriser Roundcube
+    if (dnsDomainIs(host, "roundcube.net") || shExpMatch(url, "*roundcube.net*")) {
+        return "DIRECT";
+    }
+
+    // Autoriser OVH
+    if (dnsDomainIs(host, "ovh.com") || shExpMatch(url, "*ovh.com*")) {
+        return "DIRECT";
+    }
+
+    // Autoriser Slack
+    if (dnsDomainIs(host, "slack.com") || shExpMatch(url, "*slack.com*")) {
         return "DIRECT";
     }
 
