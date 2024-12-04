@@ -38,6 +38,10 @@ function FindProxyForURL(url, host) {
     if (dnsDomainIs(host, "slack.com") || shExpMatch(url, "*slack.com*")) {
         return "DIRECT";
     }
+     // Autoriser Chatgpt
+    if (dnsDomainIs(host, "chatgpt.com") || shExpMatch(url, "*chatgpt.com*")) {
+        return "DIRECT";
+    }
 
     // Bloquer tout le reste
     return "PROXY 127.0.0.1:8080"; // Redirige tout sauf les domaines autorisés vers un faux proxy
