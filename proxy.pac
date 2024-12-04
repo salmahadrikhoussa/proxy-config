@@ -1,4 +1,3 @@
-
 function FindProxyForURL(url, host) {
     // Autoriser Aircall
     if (dnsDomainIs(host, "aircall.io") || shExpMatch(url, "*aircall.io*")) {
@@ -6,7 +5,7 @@ function FindProxyForURL(url, host) {
     }
 
     // Autoriser HubSpot
-    if (dnsDomainIs(host, "hubspot.fr") || shExpMatch(url, "*hubspot.fr*")) {
+    if (dnsDomainIs(host, "hubspot.com") || shExpMatch(url, "*hubspot.fr*")) {
         return "DIRECT";
     }
 
@@ -21,8 +20,13 @@ function FindProxyForURL(url, host) {
         return "DIRECT";
     }
 
-    // Autoriser Roundcube
-    if (dnsDomainIs(host, "mail.ovh.net/roundcube") || shExpMatch(url, "*mail.ovh.net/roundcube*")) {
+    // Autoriser Roundcube (OVH)
+    if (dnsDomainIs(host, "mail.ovh.net") || shExpMatch(url, "*mail.ovh.net/roundcube*")) {
+        return "DIRECT";
+    }
+
+    // Autoriser OVH
+    if (dnsDomainIs(host, "ovh.com") || shExpMatch(url, "*ovh.com*")) {
         return "DIRECT";
     }
 
