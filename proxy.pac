@@ -22,12 +22,7 @@ function FindProxyForURL(url, host) {
     }
 
     // Autoriser Roundcube
-    if (dnsDomainIs(host, "roundcube.net") || shExpMatch(url, "*roundcube.net*")) {
-        return "DIRECT";
-    }
-
-    // Autoriser OVH
-    if (dnsDomainIs(host, "ovh.com") || shExpMatch(url, "*ovh.com*")) {
+    if (dnsDomainIs(host, "mail.ovh.net/roundcube") || shExpMatch(url, "*mail.ovh.net/roundcube*")) {
         return "DIRECT";
     }
 
