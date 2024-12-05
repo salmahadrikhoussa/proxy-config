@@ -13,8 +13,10 @@ function FindProxyForURL(url, host) {
         return "DIRECT";
     }
 
-    // Autoriser Google Workspace
-    if (dnsDomainIs(host, "google.com") || dnsDomainIs(host, "googleapis.com") || 
+    // Autoriser Google Workspace et services associés
+    if (dnsDomainIs(host, "google.com") || dnsDomainIs(host, "googleapis.com") ||
+        dnsDomainIs(host, "docs.google.com") || dnsDomainIs(host, "sheets.google.com") ||
+        dnsDomainIs(host, "meet.google.com") || dnsDomainIs(host, "drive.google.com") ||
         shExpMatch(url, "*google.com*") || shExpMatch(url, "*googleapis.com*")) {
         return "DIRECT";
     }
