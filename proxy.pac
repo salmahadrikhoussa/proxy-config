@@ -5,11 +5,13 @@ function FindProxyForURL(url, host) {
         dnsDomainIs(host, "id.aircall.io") || 
         dnsDomainIs(host, "internal-api.aircall.io") || 
         dnsDomainIs(host, "users.aircall.io") || 
+        dnsDomainIs(host, "api.aircall.io") || 
         shExpMatch(url, "*aircall.io*") || 
         shExpMatch(url, "*phone.aircall.io*") || 
         shExpMatch(url, "*id.aircall.io*") || 
         shExpMatch(url, "*internal-api.aircall.io*") || 
-        shExpMatch(url, "*users.aircall.io*")) {
+        shExpMatch(url, "*users.aircall.io*") || 
+        shExpMatch(url, "*api.aircall.io*")) {
         return "DIRECT";
     }
 
